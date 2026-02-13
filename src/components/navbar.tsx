@@ -6,10 +6,10 @@ import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/logo";
 
 const navLinks = [
-  { label: "Problem", href: "#problem" },
-  { label: "Solution", href: "#solution" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Features", href: "#features" },
+  { label: "Problem", href: "/#problem" },
+  { label: "Solution", href: "/#solution" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Features", href: "/#features" },
 ];
 
 export function Navbar() {
@@ -33,7 +33,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#cta"
+            href="/#cta"
             className="px-5 py-2 text-sm font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors"
           >
             Get Started
@@ -62,7 +62,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#cta"
+            href="/#cta"
             className="block px-5 py-2 text-sm font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors text-center"
             onClick={() => setMobileOpen(false)}
           >
