@@ -9,8 +9,15 @@ RUN npm ci
 # Build the application
 FROM base AS builder
 WORKDIR /app
+
+# Accept build arguments
+ARG NEXT_PUBLIC_GA_MEASUREMENT_ID
+ENV NEXT_PUBLIC_GA_MEASUREMENT_ID=$NEXT_PUBLIC_GA_MEASUREMENT_ID
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+
+# Build Next.js app
 RUN npm run build
 
 # Production image

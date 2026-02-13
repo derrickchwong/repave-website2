@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { CookieConsent } from "@/components/cookie-consent";
+import { GoogleAnalytics } from "@/components/analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -94,9 +96,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
       >
+        <GoogleAnalytics />
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );
