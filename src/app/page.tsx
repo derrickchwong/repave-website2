@@ -1,10 +1,6 @@
 import { HeroSection } from "@/components/sections/hero";
-import { ProblemSection } from "@/components/sections/problem";
-import { SolutionSection } from "@/components/sections/solution";
-import { HowItWorksSection } from "@/components/sections/how-it-works";
-import { FeaturesSection } from "@/components/sections/features";
-import { UseCasesSection } from "@/components/sections/use-cases";
-import { StatsSection } from "@/components/sections/stats";
+import { CostOfInactionSection } from "@/components/sections/cost-of-inaction";
+import { AiAmplifierSection } from "@/components/sections/ai-amplifier";
 import { CtaSection } from "@/components/sections/cta";
 
 const jsonLd = {
@@ -35,12 +31,8 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSection />
-      <ProblemSection />
-      <SolutionSection />
-      <HowItWorksSection />
-      <FeaturesSection />
-      <UseCasesSection />
-      <StatsSection />
+      <CostOfInactionSection />
+      <AiAmplifierSection />
       <CtaSection />
     </>
   );

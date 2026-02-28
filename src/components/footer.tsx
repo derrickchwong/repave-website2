@@ -6,36 +6,48 @@ export function Footer() {
     <footer className="bg-surface-900 text-surface-400">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="md:col-span-2">
+          <div>
             <Link href="/" className="inline-block mb-4">
               <Logo variant="light" />
             </Link>
             <p className="text-surface-400 text-sm max-w-md leading-relaxed">
               AI-powered legacy software modernization. Transform decades-old
-              codebases into modern, maintainable applications — with full test
-              coverage and zero knowledge loss.
+              codebases into modern, maintainable applications.
             </p>
           </div>
 
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
-              Product
+              Platform
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#solution" className="hover:text-white transition-colors">
+                <Link href="/platform" className="hover:text-white transition-colors">
                   How It Works
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#features" className="hover:text-white transition-colors">
+                <Link href="/features" className="hover:text-white transition-colors">
                   Features
-                </a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+              Why Repave
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/use-cases" className="hover:text-white transition-colors">
+                  Use Cases
+                </Link>
               </li>
               <li>
-                <a href="#use-cases" className="hover:text-white transition-colors">
-                  Use Cases
-                </a>
+                <Link href="/why-modernize" className="hover:text-white transition-colors">
+                  Why Modernize
+                </Link>
               </li>
             </ul>
           </div>

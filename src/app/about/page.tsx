@@ -26,8 +26,7 @@ export default function AboutPage() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-surface-600 leading-relaxed mb-8">
-            We're on a mission to eliminate technical debt and modernize the
-            world's legacy software systems.
+            Our mission: <span className="font-semibold text-surface-900">Transform how the world builds software.</span>
           </p>
 
           <h2 className="text-2xl font-semibold text-surface-900 mt-12 mb-4">

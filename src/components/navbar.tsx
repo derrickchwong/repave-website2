@@ -1,16 +1,80 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Logo } from "@/components/logo";
 
-const navLinks = [
-  { label: "Problem", href: "/#problem" },
-  { label: "Solution", href: "/#solution" },
-  { label: "How It Works", href: "/#how-it-works" },
-  { label: "Features", href: "/#features" },
+const navMenus = [
+  {
+    label: "Platform",
+    items: [
+      { label: "How It Works", href: "/platform" },
+      { label: "Features", href: "/features" },
+    ],
+  },
+  {
+    label: "Why Repave",
+    items: [
+      { label: "Use Cases", href: "/use-cases" },
+      { label: "Why Modernize", href: "/why-modernize" },
+    ],
+  },
+  {
+    label: "Company",
+    items: [
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
 ];
+
+function DropdownMenu({
+  label,
+  items,
+}: {
+  label: string;
+  items: { label: string; href: string }[];
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen(!open)}
+        className="inline-flex items-center gap-1 text-sm text-surface-600 hover:text-brand-600 transition-colors"
+      >
+        {label}
+        <ChevronDown size={14} className={`transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg border border-surface-200 shadow-lg py-1 z-50">
+          {items.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block px-4 py-2.5 text-sm text-surface-600 hover:text-brand-600 hover:bg-surface-50 transition-colors"
+              onClick={() => setOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -23,21 +87,19 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm text-surface-600 hover:text-brand-600 transition-colors"
-            >
-              {link.label}
-            </a>
+          {navMenus.map((menu) => (
+            <DropdownMenu
+              key={menu.label}
+              label={menu.label}
+              items={menu.items}
+            />
           ))}
-          <a
-            href="/#cta"
+          <Link
+            href="/contact"
             className="px-5 py-2 text-sm font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors"
           >
             Get Started
-          </a>
+          </Link>
         </div>
 
         <button
@@ -50,24 +112,33 @@ export function Navbar() {
       </nav>
 
       {mobileOpen && (
-        <div className="md:hidden bg-white border-b border-surface-200 px-6 py-4 space-y-3">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="block text-sm text-surface-600 hover:text-brand-600 transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
-              {link.label}
-            </a>
+        <div className="md:hidden bg-white border-b border-surface-200 px-6 py-4 space-y-4">
+          {navMenus.map((menu) => (
+            <div key={menu.label}>
+              <p className="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-2">
+                {menu.label}
+              </p>
+              <div className="space-y-1">
+                {menu.items.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block text-sm text-surface-600 hover:text-brand-600 transition-colors py-1"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           ))}
-          <a
-            href="/#cta"
+          <Link
+            href="/contact"
             className="block px-5 py-2 text-sm font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors text-center"
             onClick={() => setMobileOpen(false)}
           >
             Get Started
-          </a>
+          </Link>
         </div>
       )}
     </header>
