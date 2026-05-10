@@ -10,9 +10,9 @@ export function Logo({ className = "" }: LogoProps) {
     <Image
       src="/repave-logo-horizontal.svg"
       alt="Repave.ai"
-      width={160}
-      height={40}
-      className={`h-8 w-auto ${className}`}
+      width={190}
+      height={48}
+      className={`h-10 w-auto ${className}`}
     />
   );
 }
