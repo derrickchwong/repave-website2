@@ -44,9 +44,9 @@ export function CostOfInactionSection() {
           {painPoints.map((point) => (
             <div
               key={point.stat}
-              className="bg-white rounded-2xl p-6 border border-surface-200 text-center"
+              className="bg-card rounded-md p-6 border border-surface-200 text-center"
             >
-              <div className="w-12 h-12 rounded-xl bg-surface-100 flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 rounded-md bg-surface-100 flex items-center justify-center mx-auto mb-4">
                 <point.icon size={24} className="text-surface-600" />
               </div>
               <p className="text-lg font-bold text-surface-900 mb-1">

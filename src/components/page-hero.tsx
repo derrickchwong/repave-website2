@@ -10,7 +10,7 @@ export function PageHero({ title, subtitle, label }: PageHeroProps) {
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           {label && (
-            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">
+            <p className="text-sm font-semibold text-brand-600 uppercase mb-3">
               {label}
             </p>
           )}

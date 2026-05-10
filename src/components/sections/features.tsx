@@ -72,7 +72,7 @@ export function FeaturesSection() {
     <section id="features" className="py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">
+          <p className="text-sm font-semibold text-brand-600 uppercase mb-3">
             Platform Features
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-surface-900 mb-4">
@@ -88,9 +88,9 @@ export function FeaturesSection() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group bg-white rounded-2xl p-6 border border-surface-200 hover:border-brand-200 hover:shadow-lg transition-all"
+              className="group bg-card rounded-md p-6 border border-surface-200 hover:border-brand-200 hover:shadow-lg transition-all"
             >
-              <div className="w-12 h-12 rounded-xl bg-brand-50 group-hover:bg-brand-100 flex items-center justify-center mb-4 transition-colors">
+              <div className="w-12 h-12 rounded-md bg-brand-50 group-hover:bg-brand-100 flex items-center justify-center mb-4 transition-colors">
                 <feature.icon size={24} className="text-brand-600" />
               </div>
               <h3 className="text-lg font-semibold text-surface-900 mb-2">

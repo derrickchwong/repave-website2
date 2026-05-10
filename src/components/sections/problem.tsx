@@ -63,7 +63,7 @@ export function ProblemSection() {
     <section id="problem" className="py-20 md:py-28 bg-surface-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-surface-500 uppercase tracking-wider mb-3">
+          <p className="text-sm font-semibold text-surface-500 uppercase mb-3">
             The Legacy Trap
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-surface-900 mb-4">
@@ -81,10 +81,10 @@ export function ProblemSection() {
           {painPoints.map((point) => (
             <div
               key={point.title}
-              className="bg-white rounded-2xl p-6 border border-surface-200 hover:border-surface-300 hover:shadow-lg transition-all"
+              className="bg-card rounded-md p-6 border border-surface-200 hover:border-surface-300 hover:shadow-lg transition-all"
             >
               <div
-                className={`w-12 h-12 rounded-xl ${point.bgColor} flex items-center justify-center mb-4`}
+                className={`w-12 h-12 rounded-md ${point.bgColor} flex items-center justify-center mb-4`}
               >
                 <point.icon size={24} className={point.color} />
               </div>
@@ -98,7 +98,7 @@ export function ProblemSection() {
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-surface-800 to-surface-900 rounded-2xl p-8 md:p-12 text-center">
+        <div className="mt-16 bg-gradient-to-r from-surface-800 to-surface-900 rounded-md p-8 md:p-12 text-center">
           <p className="text-2xl md:text-3xl font-bold text-white mb-3">
             Enterprises spend{" "}
             <span className="text-brand-300">70-80% of their IT budgets</span>

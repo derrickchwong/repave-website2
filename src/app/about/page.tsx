@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <Link
           href="/"
@@ -62,7 +62,7 @@ export default function AboutPage() {
             impossible.
           </p>
 
-          <div className="bg-surface-50 border border-surface-200 rounded-lg p-8 mt-12">
+          <div className="bg-surface-50 border border-surface-200 rounded-md p-8 mt-12">
             <h3 className="text-xl font-semibold text-surface-900 mb-3">
               Ready to modernize your legacy systems?
             </h3>
@@ -71,7 +71,7 @@ export default function AboutPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block px-6 py-3 text-sm font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors"
+              className="inline-block px-6 py-3 text-sm font-medium text-white bg-brand-600 rounded-md hover:bg-brand-700 transition-colors"
             >
               Contact Us
             </Link>

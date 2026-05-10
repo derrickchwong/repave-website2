@@ -13,7 +13,7 @@ export function PageCta() {
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 px-8 py-3.5 text-base font-medium text-white bg-brand-600 rounded-xl hover:bg-brand-700 transition-all hover:shadow-lg hover:shadow-brand-600/25"
+          className="inline-flex items-center gap-2 px-8 py-3.5 text-base font-medium text-white bg-brand-600 rounded-md hover:bg-brand-700 transition-all hover:shadow-lg hover:shadow-brand-600/25"
         >
           Talk to our team
           <ArrowRight size={18} />

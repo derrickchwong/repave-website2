@@ -50,7 +50,7 @@ export function SolutionSection() {
     <section id="solution" className="py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">
+          <p className="text-sm font-semibold text-brand-600 uppercase mb-3">
             The Repave Approach
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-surface-900 mb-4">
@@ -72,7 +72,7 @@ export function SolutionSection() {
               } gap-8 md:gap-16 items-center`}
             >
               <div className="flex-1">
-                <div className="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center mb-5">
+                <div className="w-14 h-14 rounded-md bg-brand-50 flex items-center justify-center mb-5">
                   <cap.icon size={28} className="text-brand-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-surface-900 mb-3">
@@ -94,7 +94,7 @@ export function SolutionSection() {
                 </ul>
               </div>
               <div className="flex-1 w-full">
-                <div className="bg-surface-50 border border-surface-200 rounded-2xl p-8 aspect-[4/3] flex items-center justify-center">
+                <div className="bg-surface-50 border border-surface-200 rounded-md p-8 aspect-[4/3] flex items-center justify-center">
                   {index === 0 && <AnalysisDiagram />}
                   {index === 1 && <UnderstandingDiagram />}
                   {index === 2 && <BddDiagram />}
@@ -111,7 +111,7 @@ export function SolutionSection() {
 function AnalysisDiagram() {
   return (
     <div className="w-full max-w-sm space-y-3 text-sm">
-      <div className="bg-white rounded-lg border border-surface-200 p-4 flex items-center gap-3 shadow-sm">
+      <div className="bg-card rounded-md border border-surface-200 p-4 flex items-center gap-3 shadow-sm">
         <div className="w-8 h-8 rounded-md bg-surface-100 flex items-center justify-center text-surface-600 font-mono text-xs font-bold">
           .java
         </div>
@@ -123,7 +123,7 @@ function AnalysisDiagram() {
       <div className="flex justify-center">
         <ArrowRight size={20} className="text-surface-400 rotate-90" />
       </div>
-      <div className="bg-white rounded-lg border border-brand-200 p-4 flex items-center gap-3 shadow-sm border-l-4 border-l-brand-500">
+      <div className="bg-card rounded-md border border-brand-200 p-4 flex items-center gap-3 shadow-sm border-l-4 border-l-brand-500">
         <Brain size={20} className="text-brand-600" />
         <div>
           <p className="font-medium text-surface-800">AI Analysis Engine</p>
@@ -135,7 +135,7 @@ function AnalysisDiagram() {
       <div className="flex justify-center">
         <ArrowRight size={20} className="text-brand-400 rotate-90" />
       </div>
-      <div className="bg-white rounded-lg border border-brand-200 p-4 flex items-center gap-3 shadow-sm border-l-4 border-l-brand-300">
+      <div className="bg-card rounded-md border border-brand-200 p-4 flex items-center gap-3 shadow-sm border-l-4 border-l-brand-300">
         <CheckCircle2 size={20} className="text-brand-500" />
         <div>
           <p className="font-medium text-surface-800">
@@ -152,41 +152,41 @@ function UnderstandingDiagram() {
   return (
     <div className="w-full max-w-xs mx-auto space-y-4">
       <div className="text-center">
-        <p className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">
+        <p className="text-xs font-semibold text-surface-500 uppercase mb-3">
           Full System Traceability
         </p>
       </div>
       <div className="space-y-2">
         <div className="flex items-center gap-3">
-          <div className="w-24 bg-surface-700 text-white text-xs font-medium px-3 py-2 rounded-lg text-center">
+          <div className="w-24 bg-surface-700 text-white text-xs font-medium px-3 py-2 rounded-md text-center">
             Users
           </div>
           <div className="flex-1 border-t-2 border-dashed border-surface-300" />
           <span className="text-[10px] text-surface-400">performs</span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="w-24 bg-brand-600 text-white text-xs font-medium px-3 py-2 rounded-lg text-center">
+          <div className="w-24 bg-brand-600 text-white text-xs font-medium px-3 py-2 rounded-md text-center">
             Actions
           </div>
           <div className="flex-1 border-t-2 border-dashed border-surface-300" />
           <span className="text-[10px] text-surface-400">triggers</span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="w-24 bg-brand-400 text-white text-xs font-medium px-3 py-2 rounded-lg text-center">
+          <div className="w-24 bg-brand-400 text-white text-xs font-medium px-3 py-2 rounded-md text-center">
             Interfaces
           </div>
           <div className="flex-1 border-t-2 border-dashed border-surface-300" />
           <span className="text-[10px] text-surface-400">calls</span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="w-24 bg-brand-100 text-brand-800 text-xs font-medium px-3 py-2 rounded-lg text-center">
+          <div className="w-24 bg-brand-100 text-brand-800 text-xs font-medium px-3 py-2 rounded-md text-center">
             Functions
           </div>
           <div className="flex-1 border-t-2 border-dashed border-surface-300" />
           <span className="text-[10px] text-surface-400">accesses</span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="w-24 bg-surface-200 text-surface-700 text-xs font-medium px-3 py-2 rounded-lg text-center">
+          <div className="w-24 bg-surface-200 text-surface-700 text-xs font-medium px-3 py-2 rounded-md text-center">
             Database
           </div>
           <div className="flex-1" />
@@ -202,7 +202,7 @@ function UnderstandingDiagram() {
 function BddDiagram() {
   return (
     <div className="w-full max-w-sm font-mono text-xs space-y-2">
-      <div className="bg-white rounded-lg border border-surface-200 p-4 shadow-sm">
+      <div className="bg-card rounded-md border border-surface-200 p-4 shadow-sm">
         <p className="text-surface-700 font-semibold mb-1">
           Feature: Order Management
         </p>

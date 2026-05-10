@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <Link
           href="/"
@@ -25,19 +25,19 @@ export default function ContactPage() {
         </h1>
 
         <p className="text-xl text-surface-600 leading-relaxed mb-12">
-          Ready to modernize your legacy systems? We'd love to hear from you.
+          Ready to modernize your legacy systems? We&apos;d love to hear from you.
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-surface-50 border border-surface-200 rounded-lg p-8">
-            <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
+          <div className="bg-surface-50 border border-surface-200 rounded-md p-8">
+            <div className="w-12 h-12 bg-brand-100 rounded-md flex items-center justify-center mb-4">
               <Mail className="text-brand-600" size={24} />
             </div>
             <h2 className="text-xl font-semibold text-surface-900 mb-2">
               Email Us
             </h2>
             <p className="text-surface-600 mb-4">
-              Send us an email and we'll get back to you within 24 hours.
+              Send us an email and we&apos;ll get back to you within 24 hours.
             </p>
             <a
               href="mailto:info@repave.ai"
@@ -47,8 +47,8 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="bg-surface-50 border border-surface-200 rounded-lg p-8">
-            <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
+          <div className="bg-surface-50 border border-surface-200 rounded-md p-8">
+            <div className="w-12 h-12 bg-brand-100 rounded-md flex items-center justify-center mb-4">
               <MessageSquare className="text-brand-600" size={24} />
             </div>
             <h2 className="text-xl font-semibold text-surface-900 mb-2">
@@ -66,7 +66,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="bg-white border border-surface-200 rounded-lg p-8">
+        <div className="bg-card border border-surface-200 rounded-md p-8">
           <h2 className="text-2xl font-semibold text-surface-900 mb-6">
             Frequently Asked Questions
           </h2>

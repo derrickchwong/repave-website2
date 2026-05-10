@@ -54,7 +54,7 @@ export function HowItWorksSection() {
     <section id="how-it-works" className="py-20 md:py-28 bg-surface-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">
+          <p className="text-sm font-semibold text-brand-600 uppercase mb-3">
             How It Works
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-surface-900 mb-4">
@@ -94,7 +94,7 @@ export function HowItWorksSection() {
                           : "md:float-left md:mr-4"
                       }`}
                     >
-                      <span className="text-xs font-bold text-surface-400 uppercase tracking-widest">
+                      <span className="text-xs font-bold text-surface-400 uppercase">
                         Step {step.number}
                       </span>
                       <h3 className="text-xl font-bold text-surface-900 mt-1 mb-2">

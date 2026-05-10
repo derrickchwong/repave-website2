@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <Link
           href="/"
@@ -35,7 +35,7 @@ export default function PrivacyPolicyPage() {
             Introduction
           </h2>
           <p className="text-surface-600 leading-relaxed">
-            Repave.ai ("we," "our," or "us") is committed to protecting your
+            Repave.ai (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your
             privacy. This Privacy Policy explains how we collect, use, disclose,
             and safeguard your information when you visit our website or use our
             services.
@@ -176,7 +176,7 @@ export default function PrivacyPolicyPage() {
             <li>Referring website</li>
           </ul>
           <p className="text-surface-600 leading-relaxed">
-            You can withdraw your consent at any time by clearing your browser's
+            You can withdraw your consent at any time by clearing your browser&apos;s
             local storage or adjusting your browser cookie settings. Learn more
             about{" "}
             <a
@@ -196,7 +196,7 @@ export default function PrivacyPolicyPage() {
           <p className="text-surface-600 leading-relaxed">
             We may update this Privacy Policy from time to time. We will notify
             you of any changes by posting the new policy on this page and
-            updating the "Last updated" date.
+            updating the &quot;Last updated&quot; date.
           </p>
 
           <h2 className="text-2xl font-semibold text-surface-900 mt-8 mb-4">

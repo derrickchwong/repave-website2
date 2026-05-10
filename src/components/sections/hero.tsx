@@ -6,7 +6,7 @@ export function HeroSection() {
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 hero-gradient overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
             Transform how the world
             <br />
             <span className="gradient-text">builds software.</span>

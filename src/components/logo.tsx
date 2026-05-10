@@ -1,18 +1,18 @@
+import Image from "next/image";
+
 interface LogoProps {
   variant?: "dark" | "light";
   className?: string;
 }
 
-export function Logo({ variant = "dark", className = "" }: LogoProps) {
-  const textColor = variant === "dark" ? "text-[#616161]" : "text-white";
-  const accentColor = "text-[#63d297]";
-
+export function Logo({ className = "" }: LogoProps) {
   return (
-    <span
-      className={`font-logo font-bold text-2xl tracking-tight ${className}`}
-    >
-      <span className={textColor}>Repave</span>
-      <span className={accentColor}>.ai</span>
-    </span>
+    <Image
+      src="/repave-logo-horizontal.svg"
+      alt="Repave.ai"
+      width={160}
+      height={40}
+      className={`h-8 w-auto ${className}`}
+    />
   );
 }

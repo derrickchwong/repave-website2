@@ -51,7 +51,7 @@ export function StatsSection() {
     <section className="py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">
+          <p className="text-sm font-semibold text-brand-600 uppercase mb-3">
             Business Impact
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-surface-900 mb-4">
@@ -68,9 +68,9 @@ export function StatsSection() {
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className="bg-white rounded-2xl p-6 border border-surface-200"
+              className="bg-card rounded-md p-6 border border-surface-200"
             >
-              <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-md bg-brand-50 flex items-center justify-center mb-4">
                 <benefit.icon size={24} className="text-brand-600" />
               </div>
               <h3 className="text-lg font-semibold text-surface-900 mb-2">
@@ -83,7 +83,7 @@ export function StatsSection() {
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-br from-surface-700 via-surface-800 to-surface-900 rounded-3xl p-10 md:p-16">
+        <div className="mt-16 bg-gradient-to-br from-surface-700 via-surface-800 to-surface-900 rounded-md p-10 md:p-16">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <p className="text-4xl md:text-5xl font-bold text-brand-300 mb-2">

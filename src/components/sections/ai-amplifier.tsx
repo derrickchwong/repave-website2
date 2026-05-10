@@ -6,7 +6,7 @@ export function AiAmplifierSection() {
     <section className="py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mx-auto">
-          <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">
+          <p className="text-sm font-semibold text-brand-600 uppercase mb-3">
             Our Philosophy
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-surface-900 mb-6">

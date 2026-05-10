@@ -10,11 +10,9 @@ export function GoogleAnalytics() {
   const [consentGiven, setConsentGiven] = useState(false);
 
   useEffect(() => {
-    // Check initial consent state
-    const consent = localStorage.getItem("cookie-consent");
-    if (consent === "accepted") {
-      setConsentGiven(true);
-    }
+    const initialConsentTimer = window.setTimeout(() => {
+      setConsentGiven(localStorage.getItem("cookie-consent") === "accepted");
+    }, 0);
 
     // Listen for consent events
     const handleAccept = () => {
@@ -35,6 +33,7 @@ export function GoogleAnalytics() {
     window.addEventListener("cookie-consent-rejected", handleReject);
 
     return () => {
+      window.clearTimeout(initialConsentTimer);
       window.removeEventListener("cookie-consent-accepted", handleAccept);
       window.removeEventListener("cookie-consent-rejected", handleReject);
     };
@@ -72,7 +71,7 @@ export function GoogleAnalytics() {
 // TypeScript declaration for gtag
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
-    dataLayer: any[];
+    gtag: (...args: unknown[]) => void;
+    dataLayer: unknown[];
   }
 }

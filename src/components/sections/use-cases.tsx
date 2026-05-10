@@ -36,7 +36,7 @@ export function UseCasesSection() {
     <section id="use-cases" className="py-20 md:py-28 bg-surface-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">
+          <p className="text-sm font-semibold text-brand-600 uppercase mb-3">
             Use Cases
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-surface-900 mb-4">
@@ -53,10 +53,10 @@ export function UseCasesSection() {
           {useCases.map((useCase) => (
             <div
               key={useCase.title}
-              className="bg-white rounded-2xl p-8 border border-surface-200 hover:shadow-lg transition-shadow"
+              className="bg-card rounded-md p-8 border border-surface-200 hover:shadow-lg transition-shadow"
             >
               <div className="flex items-center gap-4 mb-5">
-                <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-md bg-brand-50 flex items-center justify-center shrink-0">
                   <useCase.icon size={24} className="text-brand-600" />
                 </div>
                 <h3 className="text-xl font-bold text-surface-900">
@@ -66,7 +66,7 @@ export function UseCasesSection() {
 
               <div className="space-y-4 mb-5">
                 <div>
-                  <p className="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-1">
+                  <p className="text-xs font-semibold text-surface-400 uppercase mb-1">
                     The Challenge
                   </p>
                   <p className="text-sm text-surface-600 leading-relaxed">
@@ -74,7 +74,7 @@ export function UseCasesSection() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-1">
+                  <p className="text-xs font-semibold text-brand-600 uppercase mb-1">
                     The Outcome
                   </p>
                   <p className="text-sm text-surface-600 leading-relaxed">
