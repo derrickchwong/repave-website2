@@ -1,83 +1,72 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 
+// The single site footer, used by every page (homepage included) via the
+// root layout — so it can never drift between pages.
+const columns = [
+  {
+    heading: "Platform",
+    links: [
+      { label: "How It Works", href: "/#how-it-works" },
+      { label: "5D Framework", href: "/platform/define" },
+      { label: "Features", href: "/features" },
+    ],
+  },
+  {
+    heading: "Why Repave",
+    links: [
+      { label: "Use Cases", href: "/use-cases" },
+      { label: "Why Modernize", href: "/why-modernize" },
+    ],
+  },
+  {
+    heading: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+    ],
+  },
+];
+
 export function Footer() {
   return (
-    <footer className="bg-card text-surface-600 border-t border-border/70">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div>
-            <Link href="/" className="inline-block mb-4">
+    <footer className="bg-card text-surface-500 border-t border-border pt-[60px] pb-8">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row md:flex-wrap md:items-start md:justify-between gap-10 mb-10">
+          <div className="max-w-[320px]">
+            <Link href="/" className="inline-flex items-center">
               <Logo />
             </Link>
-            <p className="text-surface-600 text-sm max-w-md leading-relaxed">
-              AI-powered legacy software modernization. Transform decades-old
-              codebases into modern, maintainable applications.
+            <p className="text-surface-500 text-[0.9rem] mt-3 leading-[1.7]">
+              AI-powered application modernization. Transform legacy code into a
+              high-quality, modern codebase your team loves to work with.
             </p>
           </div>
 
-          <div>
-            <h4 className="text-surface-900 font-semibold mb-4 text-sm uppercase">
-              Platform
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/platform" className="hover:text-primary transition-colors">
-                  How It Works
-                </Link>
-              </li>
-              <li>
-                <Link href="/features" className="hover:text-primary transition-colors">
-                  Features
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-surface-900 font-semibold mb-4 text-sm uppercase">
-              Why Repave
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/use-cases" className="hover:text-primary transition-colors">
-                  Use Cases
-                </Link>
-              </li>
-              <li>
-                <Link href="/why-modernize" className="hover:text-primary transition-colors">
-                  Why Modernize
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-surface-900 font-semibold mb-4 text-sm uppercase">
-              Company
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/about" className="hover:text-primary transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-primary transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy" className="hover:text-primary transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
+          <div className="flex gap-10 md:gap-16">
+            {columns.map((col) => (
+              <div key={col.heading}>
+                <h4 className="text-[0.8rem] font-bold uppercase text-surface-900 mb-4">
+                  {col.heading}
+                </h4>
+                {col.links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block text-[0.9rem] text-surface-500 mb-2.5 hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8 text-center text-sm text-surface-500">
-          <p>&copy; {new Date().getFullYear()} Repave.ai PTE LTD. All rights reserved.</p>
+        <div className="text-center pt-8 border-t border-border text-[0.8rem] text-surface-500">
+          &copy; {new Date().getFullYear()} Repave.ai PTE LTD. All rights
+          reserved.
         </div>
       </div>
     </footer>

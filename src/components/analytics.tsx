@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
+import { usePathname } from "next/navigation";
 
 // Get GA4 Measurement ID from environment variable or default
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-2FXGM4JHE4";
@@ -38,6 +39,25 @@ export function GoogleAnalytics() {
       window.removeEventListener("cookie-consent-rejected", handleReject);
     };
   }, []);
+
+  // Fire a page_view on client-side (App Router) navigations. The initial page
+  // is already counted by gtag('config', …), so skip the first run. No-ops until
+  // gtag is loaded (i.e. consent granted), so this respects the consent gate.
+  const pathname = usePathname();
+  const initialPageViewSkipped = useRef(false);
+  useEffect(() => {
+    if (!initialPageViewSkipped.current) {
+      initialPageViewSkipped.current = true;
+      return;
+    }
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", {
+        page_path: pathname,
+        page_location: window.location.href,
+        page_title: document.title,
+      });
+    }
+  }, [pathname]);
 
   if (!consentGiven) return null;
 

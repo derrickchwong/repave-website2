@@ -1,50 +1,84 @@
+import Link from "next/link";
 import {
-  Upload,
+  ShieldCheck,
   Search,
+  LayoutTemplate,
   Code2,
-  TestTubeDiagonal,
-  Rocket,
+  ClipboardCheck,
+  ArrowRight,
 } from "lucide-react";
 
 const steps = [
   {
     number: "01",
-    icon: Upload,
-    title: "Upload Your Codebase",
+    slug: "define",
+    icon: ShieldCheck,
+    title: "Define",
     description:
-      "Upload your legacy codebase as a ZIP file. We support Java, COBOL, PHP, .NET, Python, and virtually any language or framework.",
+      "Before any code changes, you set the guardrails the whole modernization obeys — the validation rules every AI agent must follow, and your database policy for which schemas and stored procedures to retain versus modernize. Decided once, enforced automatically downstream.",
+    sections: ["Validation Rules", "DB Policy"],
+    output: "Governance and data policy the AI is bound by",
     color: "from-surface-500 to-surface-600",
   },
   {
     number: "02",
+    slug: "discover",
     icon: Search,
-    title: "AI Analyzes Everything",
+    title: "Discover",
     description:
-      "Our AI pipeline scans every file, maps dependencies, discovers database schemas, identifies user interfaces, and extracts business actions — building a complete knowledge graph.",
+      "AI reads the entire legacy codebase and builds a complete, reviewable inventory of what it actually does — requirements composed into a BRD, features written as legacy-grounded BDD scenarios traced to source lines, plus every screen, API, batch job, data store, and the as-is architecture. Nothing is invented; everything cites source evidence.",
+    sections: [
+      "Requirements",
+      "BRD",
+      "Discovered Features",
+      "Views",
+      "APIs",
+      "Data Stores",
+      "Batch Jobs",
+      "As-Is Architecture",
+      "User Journeys",
+    ],
+    output: "A source-traced map of the legacy system",
     color: "from-surface-600 to-surface-700",
   },
   {
     number: "03",
-    icon: Code2,
-    title: "Features Are Discovered",
+    slug: "design",
+    icon: LayoutTemplate,
+    title: "Design",
     description:
-      "The AI identifies every user-facing feature in your legacy system and generates Gherkin BDD scenarios that capture the exact business behavior.",
+      "With the legacy system understood, Repave designs the modern target — the to-be architecture and tech stack, a design system, and a reusable application shell with interactive Figma prototypes — plus to-be catalogs for every API, view, batch job, and table. Stakeholders sign off on architecture and UX before implementation begins.",
+    sections: [
+      "To-Be Architecture",
+      "Design System",
+      "Application Shell",
+      "UI Prototypes",
+      "To-Be Catalogs",
+      "Impact Analysis",
+    ],
+    output: "The agreed modern blueprint, visualized in Figma",
     color: "from-brand-500 to-brand-600",
   },
   {
     number: "04",
-    icon: TestTubeDiagonal,
-    title: "AI Implements & Tests",
+    slug: "develop",
+    icon: Code2,
+    title: "Develop",
     description:
-      "Autonomous AI agents implement each feature in a modern stack with comprehensive test coverage. Every feature is built in isolation and regression-tested.",
+      "Autonomous agents implement the approved scenarios feature-by-feature on the modern stack, each in an isolated worktree with its own tests and regression checks — bound by the rules from Define and the target from Design. The generated code is browsable in an embedded VS Code.",
+    sections: ["Develop Features", "View Source Code"],
+    output: "Modern, tested code, feature by feature",
     color: "from-brand-600 to-brand-700",
   },
   {
     number: "05",
-    icon: Rocket,
-    title: "Ship with Confidence",
+    slug: "decision",
+    icon: ClipboardCheck,
+    title: "Decision",
     description:
-      "The result is a modern, fully tested application that preserves every business rule from your legacy system. Ready for deployment and future growth.",
+      "AI does the work, but a person makes the call. Review each completed feature by replay, run UAT, file and triage bugs against fix evidence, then accept the work or send it back with feedback — the accountability gate regulated teams require.",
+    sections: ["Completed Features", "UAT Tools", "Bug Reports"],
+    output: "Accepted, sign-off-ready modernized features",
     color: "from-brand-700 to-brand-800",
   },
 ];
@@ -55,15 +89,15 @@ export function HowItWorksSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-sm font-semibold text-brand-600 uppercase mb-3">
-            How It Works
+            The Repave 5D Framework
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-surface-900 mb-4">
-            From legacy to modern in 5 steps
+            Define. Discover. Design. Develop. Decision.
           </h2>
           <p className="text-lg text-surface-500 leading-relaxed">
-            Our AI-driven pipeline handles the heavy lifting — from
-            understanding your legacy code to delivering tested, modern
-            software.
+            You set the rules and make the final call — Repave handles the
+            discovery, design, and development in between. Every stage is
+            reviewable before the next begins.
           </p>
         </div>
 
@@ -94,15 +128,39 @@ export function HowItWorksSection() {
                           : "md:float-left md:mr-4"
                       }`}
                     >
-                      <span className="text-xs font-bold text-surface-400 uppercase">
-                        Step {step.number}
+                      <span className="text-xs font-bold text-brand-600 uppercase tracking-wide">
+                        Phase {step.number}
                       </span>
                       <h3 className="text-xl font-bold text-surface-900 mt-1 mb-2">
-                        {step.title}
+                        <Link
+                          href={`/platform/${step.slug}`}
+                          className="hover:text-primary transition-colors"
+                        >
+                          {step.title}
+                        </Link>
                       </h3>
                       <p className="text-sm text-surface-500 leading-relaxed max-w-md">
                         {step.description}
                       </p>
+                      <p className="text-xs text-surface-400 mt-3 max-w-md">
+                        <span className="font-semibold text-surface-500">
+                          In the app:
+                        </span>{" "}
+                        {step.sections.join(" · ")}
+                      </p>
+                      <p className="text-xs text-surface-400 mt-2 max-w-md">
+                        <span className="font-semibold text-brand-600">
+                          Output:
+                        </span>{" "}
+                        {step.output}
+                      </p>
+                      <Link
+                        href={`/platform/${step.slug}`}
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-brand-600 hover:text-brand-700 mt-3"
+                      >
+                        Explore {step.title}
+                        <ArrowRight size={12} />
+                      </Link>
                     </div>
                   </div>
 

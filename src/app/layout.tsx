@@ -19,7 +19,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://repave.io"),
+  metadataBase: new URL("https://repave.ai"),
   title: {
     default: "Repave.ai - AI-Powered Legacy Software Modernization",
     template: "%s | Repave.ai",
@@ -45,26 +45,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://repave.io",
+    url: "https://repave.ai",
     siteName: "Repave.ai",
     title: "Repave.ai - AI-Powered Legacy Software Modernization",
     description:
       "Stop maintaining. Start modernizing. AI that transforms legacy codebases into modern, tested software — running 24/7 while your team rests.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Repave.ai - AI-Powered Legacy Software Modernization",
-      },
-    ],
+    // Image is provided by src/app/opengraph-image.tsx (Next file convention).
   },
   twitter: {
     card: "summary_large_image",
     title: "Repave.ai - AI-Powered Legacy Software Modernization",
     description:
       "Stop maintaining. Start modernizing. AI that transforms legacy codebases into modern, tested software — running 24/7 while your team rests.",
-    images: ["/og-image.png"],
+    // Image is provided by src/app/twitter-image.tsx (Next file convention).
   },
   robots: {
     index: true,
@@ -78,7 +71,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://repave.io",
+    canonical: "https://repave.ai",
   },
   icons: {
     icon: [{ url: "/repave-icon.svg", type: "image/svg+xml" }],
@@ -95,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${plexSans.variable} ${plexMono.variable} antialiased`}
+        className={`${plexSans.variable} ${plexMono.variable}`}
       >
         <GoogleAnalytics />
         <Navbar />

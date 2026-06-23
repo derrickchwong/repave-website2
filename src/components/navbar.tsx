@@ -1,109 +1,51 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/logo";
 
-const navMenus = [
-  {
-    label: "Platform",
-    items: [
-      { label: "How It Works", href: "/platform" },
-      { label: "Features", href: "/features" },
-    ],
-  },
-  {
-    label: "Why Repave",
-    items: [
-      { label: "Use Cases", href: "/use-cases" },
-      { label: "Why Modernize", href: "/why-modernize" },
-    ],
-  },
-  {
-    label: "Company",
-    items: [
-      { label: "About", href: "/about" },
-      { label: "Contact", href: "/contact" },
-    ],
-  },
+// The single site header, used by every page (homepage included) via the
+// root layout — so it can never drift between pages.
+const navItems = [
+  { label: "Problem", href: "/#problem" },
+  { label: "Solution", href: "/#solution" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "5D Framework", href: "/platform/define" },
+  { label: "Benefits", href: "/#benefits" },
+  { label: "Why Now", href: "/#why-now" },
 ];
-
-function DropdownMenu({
-  label,
-  items,
-}: {
-  label: string;
-  items: { label: string; href: string }[];
-}) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  return (
-    <div ref={ref} className="relative">
-      <button
-        onClick={() => setOpen(!open)}
-        className="inline-flex items-center gap-1 text-sm text-surface-600 hover:text-primary transition-colors"
-      >
-        {label}
-        <ChevronDown size={14} className={`transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open && (
-        <div className="absolute top-full left-0 mt-2 w-48 bg-card rounded-md border border-border shadow-lg py-1 z-50">
-          {items.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="block px-4 py-2.5 text-sm text-surface-600 hover:text-primary hover:bg-muted/60 transition-colors"
-              onClick={() => setOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border/70">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-[20px] border-b border-border/70">
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/">
+        <Link href="/" aria-label="Repave.ai home" className="inline-flex items-center">
           <Logo />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navMenus.map((menu) => (
-            <DropdownMenu
-              key={menu.label}
-              label={menu.label}
-              items={menu.items}
-            />
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-[0.9rem] font-medium text-surface-500 hover:text-primary transition-colors"
+            >
+              {item.label}
+            </Link>
           ))}
           <Link
             href="/contact"
-            className="px-5 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-brand-700 transition-colors"
+            className="px-6 py-2.5 text-[0.9rem] font-semibold text-white bg-primary rounded-md hover:bg-brand-700 transition-colors"
           >
             Get Started
           </Link>
         </div>
 
         <button
-          className="md:hidden p-2 text-surface-600"
+          className="md:hidden p-2 text-surface-500"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -112,29 +54,20 @@ export function Navbar() {
       </nav>
 
       {mobileOpen && (
-        <div className="md:hidden bg-card border-b border-border px-6 py-4 space-y-4">
-          {navMenus.map((menu) => (
-            <div key={menu.label}>
-              <p className="text-xs font-semibold text-surface-400 uppercase mb-2">
-                {menu.label}
-              </p>
-              <div className="space-y-1">
-                {menu.items.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block text-sm text-surface-600 hover:text-primary transition-colors py-1"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
+        <div className="md:hidden bg-card border-b border-border px-6 py-4 space-y-1">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block text-[0.9rem] font-medium text-surface-500 hover:text-primary transition-colors py-2"
+              onClick={() => setMobileOpen(false)}
+            >
+              {item.label}
+            </Link>
           ))}
           <Link
             href="/contact"
-            className="block px-5 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-brand-700 transition-colors text-center"
+            className="block mt-2 px-5 py-2.5 text-[0.9rem] font-semibold text-white bg-primary rounded-md hover:bg-brand-700 transition-colors text-center"
             onClick={() => setMobileOpen(false)}
           >
             Get Started
