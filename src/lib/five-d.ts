@@ -79,12 +79,12 @@ export const FIVE_D: DStage[] = [
           "Each feature becomes Gherkin scenarios written from the legacy code — the executable contract the rewrite must satisfy, not a guess at what the system might do.",
       },
       {
-        src: "/screenshots/discover-mapping.png",
+        src: "/screenshots/discover-database.png",
         width: 1440,
         height: 900,
-        heading: "Grounded in source — no hallucination",
+        heading: "Grounded in your real database",
         caption:
-          "Every scenario maps back to the legacy source it came from, classified preserved, modernized, or dropped. Files, tables, views, and APIs are linked so nothing is invented.",
+          "Repave catalogs every object in the legacy database — 1,169 tables and views and 5,513 stored procedures and functions here — and tracks which are covered by discovered features, so modernization maps to your real schema, not assumptions.",
       },
       {
         src: "/screenshots/discover-architecture.png",
@@ -231,20 +231,20 @@ export const FIVE_D: DStage[] = [
           "Every completed feature shows its scenarios, replay counts, failures, and bugs at a glance — accept the work or send it back with feedback.",
       },
       {
-        src: "/screenshots/decision-replay-ui.png",
+        src: "/screenshots/decision-replay-trace.png",
         width: 1440,
         height: 900,
         heading: "Test Replay — watch the journey run",
         caption:
-          "A full Playwright trace of each user journey executing against the modernized app — replay every step against the real rendered screens, with DOM snapshots, network, and console.",
+          "A full Playwright trace of each user journey executing against the modernized app — replay every step against the real rendered screens, with the Gherkin scenario, DOM snapshots, network, and console alongside.",
       },
       {
-        src: "/screenshots/decision-createbug.png",
+        src: "/screenshots/decision-createbug-trace.png",
         width: 1440,
         height: 900,
         heading: "File a bug straight from the trace",
         caption:
-          "Spot an issue in the replay, pick the exact component, describe what's wrong, and report it — the bug is grounded in the real trace action and step.",
+          "Spot an issue in the replay, pick the exact component, describe what's wrong, and report it — the bug is grounded in the real trace action, step, and Gherkin scenario.",
       },
       {
         src: "/screenshots/decision-bugs.png",
