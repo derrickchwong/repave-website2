@@ -14,6 +14,7 @@ const navItems = [
   { label: "5D Framework", href: "/platform/define" },
   { label: "Benefits", href: "/#benefits" },
   { label: "Why Now", href: "/#why-now" },
+  { label: "Careers", href: "/careers" },
 ];
 
 export function Navbar() {
